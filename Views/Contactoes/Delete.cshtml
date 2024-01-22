@@ -1,0 +1,55 @@
+﻿@model AgendaContactos.Models.Contacto
+
+@{
+    ViewData["Title"] = "Borrar Contacto";
+}
+
+<div class="container-fluid m-0 p-0">
+<h2>Borrar Contacto</h2>
+<hr />
+
+<h4 class="mt-2 mb-3">Estas seguro que quieres borrar este contacto?</h4>
+<div>
+    
+  
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10 text-secondary">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class="col-sm-10 text-secondary">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-10 text-secondary">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10 text-secondary">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+        <dd class="col-sm-10 text-secondary">
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="mt-2">
+        <input type="hidden" asp-for="IdPersona" />
+        <input type="submit" value="Borrar" class="btn btn-outline-danger me-2" />
+        <a asp-action="Index" class="btn btn-outline-light">Regresar</a>
+    </form>
+</div>
+
+</div>

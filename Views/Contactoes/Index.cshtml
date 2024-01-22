@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AgendaContactos.Models.Contacto>
+
+@{
+    ViewData["Title"] = "Listado";
+}
+<div class="container-fluid m-0 p-0">
+    <h2>Listado</h2>
+    <hr />
+
+
+    <p>
+        <a asp-action="Create" class="btn btn-outline-primary mb-3 mt-3">Crear nuevo contacto</a>
+    </p>
+
+    @if (Model.Count() < 1)
+    {
+        <p class="text-warning fw-bold">No hay contactos para mostrar...  Prueba crear uno!  </p> 
+    }
+    else{
+    <table class="table">
+        
+        <thead>
+            <tr>
+                <th class="text-body fs-5 text-nowrap">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+            </tr>
+
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+
+                    <td class="text-secondary fw-bold">
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+
+                    <td>
+                        <div class="w-100">
+                            <a asp-action="Details" asp-route-id="@item.IdPersona" class="btn btn-outline-light btn-sm  me-2">Detalles</a>
+                            @*<a asp-action="Edit" asp-route-id="@item.IdPersona" class="btn btn-outline-light btn-sm">Editar</a>*@
+                            <a asp-action="Delete" asp-route-id="@item.IdPersona" class="btn btn-outline-danger btn-sm ">Borrar</a>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            }
+            
+
+        </tbody>
+
+
+
+    </table>
+    }
+
+</div>
