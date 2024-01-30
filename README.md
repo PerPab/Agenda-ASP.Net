@@ -2,7 +2,7 @@
 
 </br>
 
--- Una agenda de contactos desarrollada en ASP .NET utilizando Scaffoldind y una base de datos SQlite --
+-- Una agenda de contactos desarrollada en ASP .NET utilizando Scaffolding y una base de datos SQlite --
   
   
 </br>
